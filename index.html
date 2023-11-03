@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Photo Gallery</title>
+
+<body>
+<header class="heading"><center><h1><b><span class="head-span">FREEDOM FIGTHERS</span></b></h1></center></header>
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="Jawaharlal nehru.jpg" style="width:100%" onclick="currentSlide(1)" alt="Jawaharlal Nehru">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Mahathma gandhi.jpg" style="width:100%" onclick="currentSlide(2)" alt="Mahathma Gandhi">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Dadabhai naoroji.jpg" style="width:100%" onclick="currentSlide(3)" alt="Dadabhai Naoroji">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Dr Rajendra prasad.jpg" style="width:100%" onclick="currentSlide(4)" alt="Dr.Rajendra Prasad">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Bhagat Singh.jpg" style="width: 100%" onclick="currentSlide(5)" alt="Bhagat Singh">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Balagangadhar Tilak.jpg" style="width:100%" onclick="currentSlide(6)"alt="Balagangadhar Tilak">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="subhash chandhra bose.jpg" style="width:100%" onclick="currentSlide(7)" alt="Subhash Chandhra Bose">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Sardar vallabhai patel.jpg" style="width:100%" onclick="currentSlide(8)" alt="Sardar Vallabhai Patel">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Lal Bahadur Shastri.jpg" style="width: 100%" onclick="currentSlide(9)" alt="Lal Bahadur Shastri">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Lala lajapathi rai.jpg" style="width:100%" onclick="currentSlide(10)" alt="Lala Lajapathi Rai">
+    </div>
+
+  </div>
+  <h2 style="text-align:center">Photo Gallery</h2>
+  <div class="container">
+    <div class="mySlides">
+      <div class="numbertext">1 / 10</div>    
+      <img src="Jawaharlal nehru.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 10</div>
+      <img src="Mahathma gandhi.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 10</div>
+      <img src="Dadabhai naoroji.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 10</div>
+      <img src="Dr Rajendra prasad.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 10</div>
+      <img src="Bhagat Singh.jpg" style="width: 50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 10</div>
+      <img src="Balagangadhar Tilak.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 10</div>
+      <img src="subhash chandhra bose.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 10</div>
+      <img src="Sardar vallabhai patel.jpg" style="width:auto">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">9 / 10</div>
+      <img src="Lal Bahadur Shastri.jpg" style="width:50%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">10 / 10</div>
+      <img src="Lala lajapathi rai.jpg" style="width:auto">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += "active";
+  captionText.innerHTML = dots[slideIndex - 1].alt;
+}
+</script>
+   
+</body>
+</html>
